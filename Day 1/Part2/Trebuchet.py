@@ -1,9 +1,8 @@
 import re
 
 class Trebuchet():
-
     def inputTransform(nameFile):
-        f = open(nameFile, "r")
+        f = open("./Day 1/Part2/"+nameFile, "r")
         inputArray = f.read().split('\n')
         f.close()
         return inputArray
@@ -16,12 +15,8 @@ class Trebuchet():
         return number
     
     def processWord(word):
-        
         numbers = re.compile(r"(?=(one|two|three|four|five|six|seven|eight|nine|zero|\d))")
         matches = [match.group(1) for match in numbers.finditer(word)]
-        print("word",word)
-        print("words", matches)
-        print("numbers",Trebuchet.translateWordIntoNum(matches[0]),Trebuchet.translateWordIntoNum(matches[len(matches)-1]))
         return int(f"{Trebuchet.translateWordIntoNum(matches[0])}{Trebuchet.translateWordIntoNum(matches[len(matches)-1])}")
     
     def processData(input):

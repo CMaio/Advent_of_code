@@ -3,7 +3,7 @@ import re
 class Trebuchet():
 
     def inputTransform(nameFile):
-        f = open(nameFile, "r")
+        f = open("./Day 1/Part1/"+nameFile, "r")
         inputArray = f.read().split('\n')
         f.close()
         return inputArray
@@ -29,7 +29,7 @@ class Trebuchet():
 
 if __name__ == "__main__":
     print("Write the name of the file you want to process: ")
-    nameFile = input()
-    solution = Trebuchet.solution(nameFile)
+
+    solution = Trebuchet.solution("input.txt")
 
     print("The solution for the Day 1: Trebuchet?! is: " , solution)
